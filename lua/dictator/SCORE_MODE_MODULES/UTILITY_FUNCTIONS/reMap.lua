@@ -1,5 +1,3 @@
-local activeMap = require('jacksvimlua.SCORE_MODE_MODULES.MODE_MAPS.scoreMaps')()
-local table_copy = require('jacksvimlua.SCORE_MODE_MODULES.UTILITY_FUNCTIONS.table_copy')
 local runningMap3 = table_copy(activeMap)
 return function(score_layer)
      -- vim.g.MI = activeMap

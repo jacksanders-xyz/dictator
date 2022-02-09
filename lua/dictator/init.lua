@@ -1,14 +1,14 @@
 local libmodal = require('libmodal')
 local popup = require("plenary.popup")
 
-local scoreMaps = require('jacksvimlua.SCORE_MODE_MODULES.MODE_MAPS.scoreMaps')()
+local scoreMaps = require('SCORE_MODE_MODULES.MODE_MAPS.scoreMaps')()
 
-local staffConstructorMaps = require('jacksvimlua.SCORE_MODE_MODULES.MODE_MAPS.staffConstructorMaps')
-local chordFloatMaps = require('jacksvimlua.SCORE_MODE_MODULES.MODE_MAPS.chordFloatMaps')
+local staffConstructorMaps = require('SCORE_MODE_MODULES.MODE_MAPS.staffConstructorMaps')
+local chordFloatMaps = require('SCORE_MODE_MODULES.MODE_MAPS.chordFloatMaps')
 
-local unMap = require('jacksvimlua.SCORE_MODE_MODULES.UTILITY_FUNCTIONS.unMap')
-local reMap = require('jacksvimlua.SCORE_MODE_MODULES.UTILITY_FUNCTIONS.reMap')
-local table_copy = require('jacksvimlua.SCORE_MODE_MODULES.UTILITY_FUNCTIONS.table_copy')
+local unMap = require('SCORE_MODE_MODULES.UTILITY_FUNCTIONS.unMap')
+local reMap = require('SCORE_MODE_MODULES.UTILITY_FUNCTIONS.reMap')
+local table_copy = require('SCORE_MODE_MODULES.UTILITY_FUNCTIONS.table_copy')
 
 local runningMap = table_copy(scoreMaps)
 local modeIdentifier = 'score'
@@ -173,3 +173,7 @@ return function()
   api.nvim_command("set colorcolumn=149")
   handlerFunction()
 end
+
+
+
+
