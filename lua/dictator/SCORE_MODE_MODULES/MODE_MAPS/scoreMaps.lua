@@ -1,21 +1,21 @@
-local numbers_glyphs = require('jacksvimlua.SCORE_MODE_MODULES.GLYPHS.NUMBERS.numbers_glyphs')
-local black_noteheads = require('jacksvimlua.SCORE_MODE_MODULES.GLYPHS.NOTES.black_noteheads')
-local whole_notes = require('jacksvimlua.SCORE_MODE_MODULES.GLYPHS.NOTES.whole_notes')
-local half_notes = require('jacksvimlua.SCORE_MODE_MODULES.GLYPHS.NOTES.half_notes')
-local quarter_notes = require('jacksvimlua.SCORE_MODE_MODULES.GLYPHS.NOTES.quarter_notes')
-local eighth_notes = require('jacksvimlua.SCORE_MODE_MODULES.GLYPHS.NOTES.eighth_notes')
-local sixteenth_notes = require('jacksvimlua.SCORE_MODE_MODULES.GLYPHS.NOTES.sixteenth_notes')
-local thirtysecond_notes = require('jacksvimlua.SCORE_MODE_MODULES.GLYPHS.NOTES.thirtysecond_notes')
-local chords = require('jacksvimlua.SCORE_MODE_MODULES.GLYPHS.CHORDS.chords')
-local sharps = require('jacksvimlua.SCORE_MODE_MODULES.GLYPHS.ACCIDENTALS.sharps')
-local flats = require('jacksvimlua.SCORE_MODE_MODULES.GLYPHS.ACCIDENTALS.flats')
-local naturals = require('jacksvimlua.SCORE_MODE_MODULES.GLYPHS.ACCIDENTALS.naturals')
-local doublesharps = require('jacksvimlua.SCORE_MODE_MODULES.GLYPHS.ACCIDENTALS.doublesharps')
-local doubleflats = require('jacksvimlua.SCORE_MODE_MODULES.GLYPHS.ACCIDENTALS.doubleflats')
-local rests = require('jacksvimlua.SCORE_MODE_MODULES.GLYPHS.RESTS.rests')
--- local ties = require('jacksvimlua.SCORE_MODE_MODULES.GLYPHS.TIES.ties')
-local controllers_switches_routers = require('jacksvimlua.SCORE_MODE_MODULES.GLYPHS.controllers_switches_routers')
-local clefs_staffs_barlines = require('jacksvimlua.SCORE_MODE_MODULES.GLYPHS.clefs_staffs_barlines')
+local numbers_glyphs = require('dictator.SCORE_MODE_MODULES.GLYPHS.NUMBERS.numbers_glyphs')
+local black_noteheads = require('dictator.SCORE_MODE_MODULES.GLYPHS.NOTES.black_noteheads')
+local whole_notes = require('dictator.SCORE_MODE_MODULES.GLYPHS.NOTES.whole_notes')
+local half_notes = require('dictator.SCORE_MODE_MODULES.GLYPHS.NOTES.half_notes')
+local quarter_notes = require('dictator.SCORE_MODE_MODULES.GLYPHS.NOTES.quarter_notes')
+local eighth_notes = require('dictator.SCORE_MODE_MODULES.GLYPHS.NOTES.eighth_notes')
+local sixteenth_notes = require('dictator.SCORE_MODE_MODULES.GLYPHS.NOTES.sixteenth_notes')
+local thirtysecond_notes = require('dictator.SCORE_MODE_MODULES.GLYPHS.NOTES.thirtysecond_notes')
+local chords = require('dictator.SCORE_MODE_MODULES.GLYPHS.CHORDS.chords')
+local sharps = require('dictator.SCORE_MODE_MODULES.GLYPHS.ACCIDENTALS.sharps')
+local flats = require('dictator.SCORE_MODE_MODULES.GLYPHS.ACCIDENTALS.flats')
+local naturals = require('dictator.SCORE_MODE_MODULES.GLYPHS.ACCIDENTALS.naturals')
+local doublesharps = require('dictator.SCORE_MODE_MODULES.GLYPHS.ACCIDENTALS.doublesharps')
+local doubleflats = require('dictator.SCORE_MODE_MODULES.GLYPHS.ACCIDENTALS.doubleflats')
+local rests = require('dictator.SCORE_MODE_MODULES.GLYPHS.RESTS.rests')
+-- local ties = require('dictator.SCORE_MODE_MODULES.GLYPHS.TIES.ties')
+local controllers_switches_routers = require('dictator.SCORE_MODE_MODULES.GLYPHS.controllers_switches_routers')
+local clefs_staffs_barlines = require('dictator.SCORE_MODE_MODULES.GLYPHS.clefs_staffs_barlines')
 
 local collect_tables = {
   numbers_gylphs,
@@ -50,9 +50,9 @@ return function()
 end
 
 -- tables of glyphs:
--- local activeMap = require('jacksvimlua.SCORE_MODE_MODULES.numbers_glyphs')
+-- local activeMap = require('dictator.SCORE_MODE_MODULES.numbers_glyphs')
 
--- local table_copy = require('jacksvimlua.SCORE_MODE_MODULES.table_copy')
+-- local table_copy = require('dictator.SCORE_MODE_MODULES.table_copy')
 -- local runningMap2 = table_copy(activeMap)
 
 
