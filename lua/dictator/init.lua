@@ -16,11 +16,11 @@ local api = vim.api
 local score_layer = libmodal.Layer.new(runningMap)
 local chord_float = libmodal.Mode.new('CHORD FLOAT', chordFloatMaps)
 
-function talk()
-  -- vim.g.MI = runningMap
-  vim.g.MI = "hey hello"
-  api.nvim_command("echom g:MI")
-end
+-- function talk()
+--   -- vim.g.MI = runningMap
+--   vim.g.MI = "hey hello"
+--   api.nvim_command("echom g:MI")
+-- end
 
 function create_cw()
     local width = 60
@@ -68,12 +68,11 @@ function toggle_fwin(chord_id)
     -- if Chord_win_id ~= nil then
     --     open_menu()
     --     return
-    -- end 
+    -- end
       
     local win_info = create_cw()
     local contents = {}
     contents[1] = chord_id
-    
     Chord_win_id = win_info.win_id
     Chord_bufh = win_info.bufnr
 
@@ -98,6 +97,7 @@ function chord_constructor(chord_id, space_id)
     ["sevD"] = "Glyq<C-v>4jlP',true,false,true),'m',true)",
   }
   toggle_fwin(chord_id)
+  -- local Action = "lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('A<tab><Esc>ggh<C-v>',true,false,true),'m',true)"
   local Action = "lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('A<tab><Esc>ggh<C-v>"
   Action = Action..space_lookup[space_id]
   api.nvim_command(Action)
@@ -135,8 +135,7 @@ function enter_CF()
 end
 
 function enter_SC()
-  modeIdentifier = 'staff_constructor'
-  set_coordinates()
+  modeIdentifier = 'staff_constructor' set_coordinates()
   vim.g.staffModeExit = false
   handlerFunction()
   -- kill_coordinates()
@@ -148,7 +147,6 @@ function exit_SC()
   kill_coordinates()
   -- handlerFunction()
 end
-
 
 function snip_builder_func(staff_instruction)
   local string_prep = "lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('q:norm i"..staff_instruction
@@ -173,7 +171,3 @@ return function()
   api.nvim_command("set colorcolumn=149")
   handlerFunction()
 end
-
-
-
-

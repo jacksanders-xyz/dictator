@@ -18,7 +18,7 @@ local controllers_switches_routers = require('dictator.SCORE_MODE_MODULES.GLYPHS
 local clefs_staffs_barlines = require('dictator.SCORE_MODE_MODULES.GLYPHS.clefs_staffs_barlines')
 
 local collect_tables = {
-  numbers_gylphs,
+  numbers_glyphs,
   black_noteheads,
   whole_notes,
   half_notes,
@@ -37,6 +37,8 @@ local collect_tables = {
   clefs_staffs_barlines,
 }
 
+ 
+
 return function()
   local MasterTable = {
     ['n'] = {}
@@ -48,6 +50,7 @@ return function()
     end
   return MasterTable
 end
+
 
 -- tables of glyphs:
 -- local activeMap = require('dictator.SCORE_MODE_MODULES.numbers_glyphs')
