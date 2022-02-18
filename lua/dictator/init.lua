@@ -1,7 +1,7 @@
 local libmodal = require('libmodal')
 local popup = require("plenary.popup")
 
-local scoreMaps = require('dictator.SCORE_MODE_MODULES.MODE_MAPS.scoreMaps')()
+local scoreMaps = require('dictator.SCORE_MODE_MODULES.MODE_MAPS.scoreMaps')
 
 local staffConstructorMaps = require('dictator.SCORE_MODE_MODULES.MODE_MAPS.staffConstructorMaps')
 local chordFloatMaps = require('dictator.SCORE_MODE_MODULES.MODE_MAPS.chordFloatMaps')
@@ -22,7 +22,20 @@ local chord_float = libmodal.Mode.new('CHORD FLOAT', chordFloatMaps)
 --   api.nvim_command("echom g:MI")
 -- end
 
-function create_cw()
+local function handlerFunction()
+  if(modeIdentifier == 'score')
+    then
+      score_layer:enter()
+  elseif(modeIdentifier == 'chord_float')
+    then
+      chord_float:enter()
+  elseif(modeIdentifier == 'staff_constructor')
+    then
+      libmodal.mode.enter('STAFF', staffConstructorMaps, true)
+    end
+end
+
+local function create_cw()
     local width = 60
     local height = 10
     local borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" }
@@ -59,7 +72,7 @@ end
 --     api.nvim_open_win(Chord_win_id, true)
 -- end
 
-function toggle_fwin(chord_id)
+local function toggle_fwin(chord_id)
     if Chord_win_id ~= nil and api.nvim_win_is_valid(Chord_win_id) then
         close_menu()
         return
@@ -69,7 +82,6 @@ function toggle_fwin(chord_id)
     --     open_menu()
     --     return
     -- end
-      
     local win_info = create_cw()
     local contents = {}
     contents[1] = chord_id
@@ -86,14 +98,14 @@ function toggle_fwin(chord_id)
         Chord_bufh,
         "n",
         "q",
-        ":lua toggle_fwin()<CR>",
+        ":lua require('dictator').toggle_fwin()<CR>",
         { silent = true }
     )
 end
 
-function chord_constructor(chord_id, space_id)
+local function chord_constructor(chord_id, space_id)
   local space_lookup = {
-    ["sevU"] = "Glyq<C-v>4khP',true,false,true),'m',true)",
+    ["sevU"] = "Glyq<C-v>4klP',true,false,true),'m',true)",
     ["sevD"] = "Glyq<C-v>4jlP',true,false,true),'m',true)",
   }
   toggle_fwin(chord_id)
@@ -103,71 +115,77 @@ function chord_constructor(chord_id, space_id)
   api.nvim_command(Action)
 end
 
-function set_coordinates()
+local function set_coordinates()
   api.nvim_command("set cursorline")
   api.nvim_command("set cursorcolumn")
 end
 
-function kill_coordinates()
+local function kill_coordinates()
   api.nvim_command("set nocursorline")
   api.nvim_command("set nocursorcolumn")
 end
 
-function exit_SL()
-  unMap(score_layer)
+local function exit_SL()
+  unMap(score_layer)()
   api.nvim_command("set colorcolumn=")
 end
 
-function re_entry_SL()
+local function re_entry_SL()
   reMap(score_layer)
   api.nvim_command("set colorcolumn=149")
 end
 
-function exit_CF()
+local function exit_CF()
   chord_float:exit()
   modeIdentifier = 'score'
   handlerFunction()
 end
 
-function enter_CF()
+local function enter_CF()
   modeIdentifier = 'chord_float'
   handlerFunction()
 end
 
-function enter_SC()
-  modeIdentifier = 'staff_constructor' set_coordinates()
+local function enter_SC()
+  modeIdentifier = 'staff_constructor'
+  set_coordinates()
   vim.g.staffModeExit = false
   handlerFunction()
   -- kill_coordinates()
 end
 
-function exit_SC()
+local function exit_SC()
   vim.g.staffModeExit = true
   modeIdentifier = 'score'
   kill_coordinates()
   -- handlerFunction()
 end
 
-function snip_builder_func(staff_instruction)
+local function snip_builder_func(staff_instruction)
   local string_prep = "lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('q:norm i"..staff_instruction
   string_prep = string_prep.."<cr>A<tab>',true,false,true),'m',true)"
   api.nvim_command(string_prep)
 end
 
-function handlerFunction()
-  if(modeIdentifier == 'score')
-    then
-      score_layer:enter()
-  elseif(modeIdentifier == 'chord_float')
-    then
-      chord_float:enter()
-  elseif(modeIdentifier == 'staff_constructor')
-    then
-      libmodal.mode.enter('STAFF', staffConstructorMaps, true)
-    end
+local function begin_SM()
+  api.nvim_command("set colorcolumn=149")
+ handlerFunction()
 end
 
-return function()
-  api.nvim_command("set colorcolumn=149")
-  handlerFunction()
-end
+return {
+    handlerFunction = handlerFunction,
+    create_cw = create_cw,
+    close_menu = close_menu,
+    toggle_fwin = toggle_fwin,
+    chord_constructor = chord_constructor,
+    set_coordinates = set_coordinates,
+    kill_coordinates = kill_coordinates,
+    exit_SL = exit_SL,
+    re_entry_SL = re_entry_SL,
+    exit_CF = exit_CF,
+    enter_CF = enter_CF,
+    enter_SC = enter_SC,
+    exit_SC = exit_SC,
+    snip_builder_func = snip_builder_func,
+    begin_SM = begin_SM
+}

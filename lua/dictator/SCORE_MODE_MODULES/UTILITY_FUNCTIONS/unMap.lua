@@ -1,10 +1,11 @@
-local activeMap = require('dictator.SCORE_MODE_MODULES.MODE_MAPS.scoreMaps')()
+local activeMap = require('dictator.SCORE_MODE_MODULES.MODE_MAPS.scoreMaps')
 local table_copy = require('dictator.SCORE_MODE_MODULES.UTILITY_FUNCTIONS.table_copy')
-local runningMap2 = table_copy(activeMap)
+local runningMap2 = table_copy(activeMap)()
+
 return function(score_layer)
-  for key,value in pairs(runningMap2['n']) do
+    for key,value in pairs(runningMap2['n']) do
         score_layer:unmap('n', key)
-  end
-  -- vim.g.MI = activeMap
-  -- vim.api.nvim_command("echom g:MI")
+    end
+    -- vim.g.MI = runningMap2
+    -- vim.api.nvim_command("echom g:MI")
 end

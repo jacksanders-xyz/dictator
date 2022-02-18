@@ -1,10 +1,11 @@
 return {
     ['<C-s>'] = {
-      ['rhs'] = ':lua enter_SC()<CR>',
+      ['rhs'] = ':lua require("dictator").enter_SC()<CR>',
+        -- ['rhs'] = ':lua enter_SC()<CR>',
       ['noremap'] = true
     },
     ['<Esc>'] = {
-      ['rhs'] = ':lua exit_SL()<CR>',
+      ['rhs'] = ':lua require("dictator").exit_SL()<CR>',
       ['noremap'] = true,
       ['silent'] = true
     },
