@@ -125,12 +125,13 @@ local function kill_coordinates()
 end
 
 local function exit_SL()
-  unMap(score_layer)
-  api.nvim_command("set colorcolumn=")
+    -- unMap(score_layer)
+    score_layer:exit()
+    api.nvim_command("set colorcolumn=")
 end
 
 local function re_entry_SL()
-    reMap(score_layer)
+    -- reMap(score_layer)
     score_layer:enter()
     api.nvim_command("set colorcolumn=149")
 end
