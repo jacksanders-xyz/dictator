@@ -1,6 +1,7 @@
 local libmodal = require('libmodal')
 local popup = require("plenary.popup")
 
+
 local scoreMaps = require('dictator.SCORE_MODE_MODULES.MODE_MAPS.scoreMaps')
 
 local staffConstructorMaps = require('dictator.SCORE_MODE_MODULES.MODE_MAPS.staffConstructorMaps')
