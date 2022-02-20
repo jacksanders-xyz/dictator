@@ -16,11 +16,10 @@ local api = vim.api
 local score_layer = libmodal.Layer.new(runningMap)
 local chord_float = libmodal.Mode.new('CHORD FLOAT', chordFloatMaps)
 
--- function talk()
---   -- vim.g.MI = runningMap
---   vim.g.MI = "hey hello"
---   api.nvim_command("echom g:MI")
--- end
+local function talk()
+  vim.g.M3 = score_layer
+  api.nvim_command("echom g:M3")
+end
 
 local function handlerFunction()
   if(modeIdentifier == 'score')
@@ -126,13 +125,14 @@ local function kill_coordinates()
 end
 
 local function exit_SL()
-  unMap(score_layer)()
+  unMap(score_layer)
   api.nvim_command("set colorcolumn=")
 end
 
 local function re_entry_SL()
-  reMap(score_layer)
-  api.nvim_command("set colorcolumn=149")
+    reMap(score_layer)
+    score_layer:enter()
+    api.nvim_command("set colorcolumn=149")
 end
 
 local function exit_CF()
@@ -168,8 +168,8 @@ local function snip_builder_func(staff_instruction)
 end
 
 local function begin_SM()
-  api.nvim_command("set colorcolumn=149")
- handlerFunction()
+    api.nvim_command("set colorcolumn=149")
+    handlerFunction()
 end
 
 return {
@@ -187,5 +187,6 @@ return {
     enter_SC = enter_SC,
     exit_SC = exit_SC,
     snip_builder_func = snip_builder_func,
-    begin_SM = begin_SM
+    begin_SM = begin_SM,
+    talk = talk
 }

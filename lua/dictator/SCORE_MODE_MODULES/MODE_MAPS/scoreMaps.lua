@@ -18,27 +18,26 @@ local controllers_switches_routers = require('dictator.SCORE_MODE_MODULES.GLYPHS
 local clefs_staffs_barlines = require('dictator.SCORE_MODE_MODULES.GLYPHS.clefs_staffs_barlines')
 
 local collect_tables = {
-  numbers_glyphs,
-  black_noteheads,
-  whole_notes,
-  half_notes,
-  quarter_notes,
-  eighth_notes,
-  sixteenth_notes,
-  thirtysecond_notes,
-  chords,
-  sharps,
-  flats,
-  doublesharps,
-  doubleflats,
-  naturals,
-  rests,
+  -- numbers_glyphs,
+  -- black_noteheads,
+  -- whole_notes,
+  -- half_notes,
+  -- quarter_notes,
+  -- eighth_notes,
+  -- sixteenth_notes,
+  -- thirtysecond_notes,
+  -- chords,
+  -- sharps,
+  -- flats,
+  -- doublesharps,
+  -- doubleflats,
+  -- naturals,
+  -- rests,
   controllers_switches_routers,
-  clefs_staffs_barlines,
+  -- clefs_staffs_barlines,
 }
 
 
-return function()
   local MasterTable = {
     ['n'] = {}
   }
@@ -46,6 +45,5 @@ return function()
       for key,value in pairs(tableValue) do
         MasterTable['n'][key] = value
       end
-    end
   return MasterTable
 end
