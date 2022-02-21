@@ -4,52 +4,52 @@ return {
         ['noremap'] = true,
         ['silent'] = true
       },
-      ['0'] = {
+      ['N0'] = {
         ['rhs'] = 'vlc<Esc>',
         ['noremap'] = true,
         ['silent'] = true
       },
-      ['1'] = {
+      ['N1'] = {
         ['rhs'] = 'vlc<Esc>',
         ['noremap'] = true,
         ['silent'] = true
       },
-      ['2'] = {
+      ['N2'] = {
         ['rhs'] = 'vlc<Esc>',
         ['noremap'] = true,
         ['silent'] = true
       },
-      ['3'] = {
+      ['N3'] = {
         ['rhs'] = 'vlc<Esc>',
         ['noremap'] = true,
         ['silent'] = true
       },
-      ['4'] = {
+      ['N4'] = {
         ['rhs'] = 'vlc<Esc>',
         ['noremap'] = true,
         ['silent'] = true
       },
-      ['5'] = {
+      ['N5'] = {
         ['rhs'] = 'vlc<Esc>',
         ['noremap'] = true,
         ['silent'] = true
       },
-      ['6'] = {
+      ['N6'] = {
         ['rhs'] = 'vlc<Esc>',
         ['noremap'] = true,
         ['silent'] = true
       },
-      ['7'] = {
+      ['N7'] = {
         ['rhs'] = 'vlc<Esc>',
         ['noremap'] = true,
         ['silent'] = true
       },
-      ['8'] = {
+      ['N8'] = {
         ['rhs'] = 'vlc<Esc>',
         ['noremap'] = true,
         ['silent'] = true
       },
-      ['9'] = {
+      ['N9'] = {
         ['rhs'] = 'vlc<Esc>',
         ['noremap'] = true,
         ['silent'] = true

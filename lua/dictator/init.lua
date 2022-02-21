@@ -104,14 +104,15 @@ end
 
 local function chord_constructor(chord_id, space_id)
   local space_lookup = {
-    ["sevU"] = "Glyq<C-v>4klP',true,false,true),'m',true)",
-    ["sevD"] = "Glyq<C-v>4jlP',true,false,true),'m',true)",
+        ["sevU"] = "Glyqj<C-v>4klP<C-c>3jh',true,false,true),'m',true)",
+        ["sevD"] = "Glyq<C-v>4jlP',true,false,true),'m',true)",
   }
   toggle_fwin(chord_id)
-  -- local Action = "lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('A<tab><Esc>ggh<C-v>',true,false,true),'m',true)"
-  local Action = "lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('A<tab><Esc>ggh<C-v>"
-  Action = Action..space_lookup[space_id]
-  api.nvim_command(Action)
+    -- local Action = "lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('A<tab><Esc>ggh<C-v>',true,false,true),'m',true)"
+    -- you're at the top of the buffer, in visual selection mode
+    local Action = "lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('A<tab><Esc>gg0<C-v>"
+    Action = Action..space_lookup[space_id]
+    api.nvim_command(Action)
 end
 
 local function set_coordinates()
@@ -126,6 +127,11 @@ end
 
 local function exit_SL()
     -- unMap(score_layer)
+    -- local runningMap2 = table_copy(scoreMaps['n'])
+    --     for key, value in pairs(runningMap2) do
+    --         score_layer:unmap('n', key)
+    --     end
+    -- end
     score_layer:exit()
     api.nvim_command("set colorcolumn=")
 end
