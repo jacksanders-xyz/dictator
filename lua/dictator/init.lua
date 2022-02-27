@@ -109,6 +109,14 @@ local function chord_constructor(chord_id, space_id)
         ["tri*U"] = "j<c-v>4klP<c-c>3jh',true,false,true),'m',true)",
         ["tri**U"] = "j<c-v>4klP<c-c>3jh',true,false,true),'m',true)",
 
+        ["tI1"] = "j<c-v>4klP<c-c>3jh',true,false,true),'m',true)",
+        ["tI1*U"] = "j<c-v>4klP<c-c>3jh',true,false,true),'m',true)",
+        ["tI1**U"] = "j<c-v>4klP<c-c>3jh',true,false,true),'m',true)",
+
+        ["tI2"] = "j<c-v>4klP<c-c>3jh',true,false,true),'m',true)",
+        ["tI2*U"] = "j<c-v>4klP<c-c>3jh',true,false,true),'m',true)",
+        ["tI2**U"] = "j<c-v>4klP<c-c>3jh',true,false,true),'m',true)",
+
         ["sev"] = "j<c-v>4klP<c-c>3jh',true,false,true),'m',true)",
         ["sev*U"] = "j<c-v>4klP<c-c>3jh',true,false,true),'m',true)",
         ["sev**U"] = "j<c-v>4klP<c-c>3jh',true,false,true),'m',true)",

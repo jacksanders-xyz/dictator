@@ -1,5 +1,5 @@
 return {
-
+-- triads
     ['<leader>{'] = {
         ['rhs'] = ':lua require("dictator").chord_constructor("CC_3", "tri")<CR>',
         ['noremap'] = true
@@ -13,6 +13,35 @@ return {
         ['noremap'] = true
     },
 
+-- triad first inversion
+    ['<leader>={'] = {
+        ['rhs'] = ':lua require("dictator").chord_constructor("CC_63", "tI1")<CR>',
+        ['noremap'] = true
+    },
+    ['<leader>63'] = {
+        ['rhs'] = ':lua require("dictator").chord_constructor("CC_63*U", "tI1*U")<CR>',
+        ['noremap'] = true
+    },
+    ['<leader>*={'] = {
+        ['rhs'] = ':lua require("dictator").chord_constructor("CC_63**U", "tI1**U")<CR>',
+        ['noremap'] = true
+    },
+
+-- triad second inversion
+    ['<leader>=('] = {
+        ['rhs'] = ':lua require("dictator").chord_constructor("CC_64", "tI2")<CR>',
+        ['noremap'] = true
+    },
+    ['<leader>64'] = {
+        ['rhs'] = ':lua require("dictator").chord_constructor("CC_64*U", "tI2*U")<CR>',
+        ['noremap'] = true
+    },
+    ['<leader>*=('] = {
+        ['rhs'] = ':lua require("dictator").chord_constructor("CC_64**U", "tI2**U")<CR>',
+        ['noremap'] = true
+    },
+
+-- sevenths
     ['<leader>)'] = {
         ['rhs'] = ':lua require("dictator").chord_constructor("CC_7", "sev")<CR>',
         ['noremap'] = true
