@@ -1,3 +1,4 @@
+# WIP
 dictator is a library/implementation/HACK that allows neovim to use the bravura font. I don't know if I am going to maintain this quite yet...but we shall see.
 
 pre-requisites:

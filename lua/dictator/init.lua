@@ -104,20 +104,27 @@ end
 
 local function chord_constructor(chord_id, space_id)
   local space_lookup = {
-        -- ["sevU"] = "4klP<c-c>3jh',true,false,true),'m',true)",
-        ["sevU"] = "j<c-v>4klP<c-c>3j',true,false,true),'m',true)",
+
+        ["tri"] = "j<c-v>4klP<c-c>3jh',true,false,true),'m',true)",
+        ["tri*U"] = "j<c-v>4klP<c-c>3jh',true,false,true),'m',true)",
+        ["tri**U"] = "j<c-v>4klP<c-c>3jh',true,false,true),'m',true)",
+
+        ["sev"] = "j<c-v>4klP<c-c>3jh',true,false,true),'m',true)",
+        ["sev*U"] = "j<c-v>4klP<c-c>3jh',true,false,true),'m',true)",
+        ["sev**U"] = "j<c-v>4klP<c-c>3jh',true,false,true),'m',true)",
+
+        -- ["sev*U"] = "j<c-v>4klP<c-c>3jh',true,false,true),'m',true)",
+        -- ["sevD"] = "j<c-v>4klP<c-c>3jh',true,false,true),'m',true)",
+
         -- ["sevU"] = "',true,false,true),'m',true)",
-        -- ["sev*U"] = "Glyqj<C-v>4klP<C-c>3jh',true,false,true),'m',true)",
         -- ["sev*U"] = "G$k',true,false,true),'m',true)",
-        ["sevD"] = "Glyq<C-v>4jlP',true,false,true),'m',true)",
   }
-  toggle_fwin(chord_id)
+    toggle_fwin(chord_id)
     -- you're at the top of the buffer, in visual selection mode
     local Action = "lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('A<tab><c-c>gg0<c-v>}$yq<c-c>"
     -- local Action = "lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('A<tab><Esc>"
     Action = Action..space_lookup[space_id]
     api.nvim_command(Action)
-    api.nvim_command("norm! h")
 end
 
 local function set_coordinates()
