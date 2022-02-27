@@ -54,5 +54,36 @@ return {
         ['rhs'] = ':lua require("dictator").chord_constructor("CC_7**U", "sev**U")<CR>',
         ['noremap'] = true
     },
+
+-- sevenths first inversion
+    ['<leader>=&'] = {
+        ['rhs'] = ':lua require("dictator").chord_constructor("CC_65", "sI1")<CR>',
+        ['noremap'] = true
+    },
+    ['<leader>65'] = {
+        ['rhs'] = ':lua require("dictator").chord_constructor("CC_65*U", "sI1*U")<CR>',
+        ['noremap'] = true
+    },
+    ['<leader>*=&'] = {
+        ['rhs'] = ':lua require("dictator").chord_constructor("CC_65**U", "sI1**U")<CR>',
+        ['noremap'] = true
+    },
+
+
+
+
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
 

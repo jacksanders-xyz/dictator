@@ -121,6 +121,10 @@ local function chord_constructor(chord_id, space_id)
         ["sev*U"] = "j<c-v>4klP<c-c>3jh',true,false,true),'m',true)",
         ["sev**U"] = "j<c-v>4klP<c-c>3jh',true,false,true),'m',true)",
 
+        ["sI1"] = "j<c-v>4klP<c-c>3jh',true,false,true),'m',true)",
+        ["sI1*U"] = "j<c-v>4klP<c-c>3jh',true,false,true),'m',true)",
+        ["sI1**U"] = "j<c-v>4klP<c-c>3jh',true,false,true),'m',true)",
+
         -- ["sev*U"] = "j<c-v>4klP<c-c>3jh',true,false,true),'m',true)",
         -- ["sevD"] = "j<c-v>4klP<c-c>3jh',true,false,true),'m',true)",
 
