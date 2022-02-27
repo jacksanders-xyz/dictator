@@ -55,17 +55,17 @@ return {
         ['noremap'] = true
     },
 
--- sevenths first inversion
+-- sevenths first inversion, going to start from the 63 and add the fifth separately
     ['<leader>=&'] = {
-        ['rhs'] = ':lua require("dictator").chord_constructor("CC_65", "sI1")<CR>',
+        ['rhs'] = ':lua require("dictator").chord_constructor("CC_63", "sI1")<CR>',
         ['noremap'] = true
     },
     ['<leader>65'] = {
-        ['rhs'] = ':lua require("dictator").chord_constructor("CC_65*U", "sI1*U")<CR>',
+        ['rhs'] = ':lua require("dictator").chord_constructor("CC_63*U", "sI1*U")<CR>',
         ['noremap'] = true
     },
     ['<leader>*=&'] = {
-        ['rhs'] = ':lua require("dictator").chord_constructor("CC_65**U", "sI1**U")<CR>',
+        ['rhs'] = ':lua require("dictator").chord_constructor("CC_63**U", "sI1**U")<CR>',
         ['noremap'] = true
     },
 
