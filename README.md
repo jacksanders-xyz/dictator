@@ -7,4 +7,4 @@ pre-requisites:
 * enable non-ascii font in your terminal
 
 
-
+* make sure white space is enabled in markdown (and, if you are using ultisnips, whitespace is there as well)
