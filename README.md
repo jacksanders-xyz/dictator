@@ -8,3 +8,11 @@ pre-requisites:
 
 
 * make sure white space is enabled in markdown (and, if you are using ultisnips, whitespace is there as well)
+
+
+
+
+
+
+does not currently work in the browser, however for further consideration  [browser](https://smufl-browser.edirom.de/about.html) 
+[browser's github](https://github.com/Edirom/SMuFL-Browser)
