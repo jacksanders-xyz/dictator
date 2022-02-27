@@ -117,14 +117,18 @@ local function chord_constructor(chord_id, space_id)
         ["tI2*U"] = "j<c-v>4klP<c-c>3jh',true,false,true),'m',true)",
         ["tI2**U"] = "j<c-v>4klP<c-c>3jh',true,false,true),'m',true)",
 
-        ["sev"] = "j<c-v>4klP<c-c>3jh',true,false,true),'m',true)",
-        ["sev*U"] = "j<c-v>4klP<c-c>3jh',true,false,true),'m',true)",
-        ["sev**U"] = "j<c-v>4klP<c-c>3jh',true,false,true),'m',true)",
+        ["sev"] = "j<c-v>4klP<c-c>3j',true,false,true),'m',true)",
+        ["sev*U"] = "j<c-v>4klP<c-c>3j',true,false,true),'m',true)",
+        ["sev**U"] = "j<c-v>4klP<c-c>3j',true,false,true),'m',true)",
 
         -- these differ, they are a triad from the snippets and an added note:
-        ["sI1"] = "j<c-v>4klP<c-c>3jhhknk',true,false,true),'m',true)",
-        ["sI1*U"] = "j<c-v>4klP<c-c>3jhh2knj',true,false,true),'m',true)",
-        ["sI1**U"] = "j<c-v>4klP<c-c>3jhh2knn',true,false,true),'m',true)",
+        ["sI1"] = "j<c-v>4klP<c-c>3jhhknkjl',true,false,true),'m',true)",
+        ["sI1*U"] = "j<c-v>4klP<c-c>3jhh2knjjjl',true,false,true),'m',true)",
+        ["sI1**U"] = "j<c-v>4klP<c-c>3jhh2knnljj',true,false,true),'m',true)",
+
+        ["sI2"] = "j<c-v>4klP<c-c>3jhhknj',true,false,true),'m',true)",
+        ["sI2*U"] = "j<c-v>4klP<c-c>3jhh',true,false,true),'m',true)",
+        ["sI2**U"] = "j<c-v>4klP<c-c>3jhh',true,false,true),'m',true)",
 
         -- ["sev*U"] = "j<c-v>4klP<c-c>3jh',true,false,true),'m',true)",
         -- ["sevD"] = "j<c-v>4klP<c-c>3jh',true,false,true),'m',true)",

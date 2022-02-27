@@ -69,6 +69,20 @@ return {
         ['noremap'] = true
     },
 
+-- sevenths second inversion
+    ['<leader>({'] = {
+        ['rhs'] = ':lua require("dictator").chord_constructor("CC_64", "sI2")<CR>',
+        ['noremap'] = true
+    },
+    ['<leader>43'] = {
+        ['rhs'] = ':lua require("dictator").chord_constructor("CC_64*U", "sI2*U")<CR>',
+        ['noremap'] = true
+    },
+    ['<leader>*({'] = {
+        ['rhs'] = ':lua require("dictator").chord_constructor("CC_64**U", "sI2**U")<CR>',
+        ['noremap'] = true
+    },
+
 
 
 
