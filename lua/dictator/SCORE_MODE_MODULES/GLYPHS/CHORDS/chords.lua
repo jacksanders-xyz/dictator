@@ -84,10 +84,19 @@ return {
     },
 
 
-
-
-
-
+-- sevenths third inversion
+    ['<leader>(['] = {
+        ['rhs'] = ':lua require("dictator").chord_constructor("CC_3*U", "sI3")<CR>',
+        ['noremap'] = true
+    },
+    ['<leader>42'] = {
+        ['rhs'] = ':lua require("dictator").chord_constructor("CC_3**U", "sI3*U")<CR>',
+        ['noremap'] = true
+    },
+    ['<leader>*(['] = {
+        ['rhs'] = ':lua require("dictator").chord_constructor("CC_3", "sI3**U")<CR>',
+        ['noremap'] = true
+    },
 
 }
 

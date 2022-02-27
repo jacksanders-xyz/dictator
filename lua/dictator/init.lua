@@ -130,6 +130,11 @@ local function chord_constructor(chord_id, space_id)
         ["sI2*U"] = "j<c-v>4klP<c-c>3jhhknnjl',true,false,true),'m',true)",
         ["sI2**U"] = "j<c-v>4klP<c-c>3jhhknkj2l',true,false,true),'m',true)",
 
+
+        ["sI3"] = "j<c-v>4klP<c-c>3jhhjn3kklll',true,false,true),'m',true)",
+        ["sI3*U"] = "j<c-v>4klP<c-c>3jhhkn2jjl',true,false,true),'m',true)",
+        ["sI3**U"] = "<c-v>4klP<c-c>3jhhnjjll',true,false,true),'m',true)",
+
         -- ["sev*U"] = "j<c-v>4klP<c-c>3jh',true,false,true),'m',true)",
         -- ["sevD"] = "j<c-v>4klP<c-c>3jh',true,false,true),'m',true)",
 
