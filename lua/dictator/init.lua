@@ -4,7 +4,7 @@ local popup = require("plenary.popup")
 local scoreMaps = require('dictator.SCORE_MODE_MODULES.MODE_MAPS.scoreMaps')
 
 local staffConstructorMaps = require('dictator.SCORE_MODE_MODULES.MODE_MAPS.staffConstructorMaps')
-local chordFloatMaps = require('dictator.SCORE_MODE_MODULES.MODE_MAPS.chordFloatMaps')
+local keyPickerMaps = require('dictator.SCORE_MODE_MODULES.MODE_MAPS.keyPickerMaps')
 
 local unMap = require('dictator.SCORE_MODE_MODULES.UTILITY_FUNCTIONS.unMap')
 local reMap = require('dictator.SCORE_MODE_MODULES.UTILITY_FUNCTIONS.reMap')
@@ -14,7 +14,7 @@ local runningMap = table_copy(scoreMaps)
 local modeIdentifier = 'score'
 local api = vim.api
 local score_layer = libmodal.Layer.new(runningMap)
-local chord_float = libmodal.Mode.new('CHORD FLOAT', chordFloatMaps)
+-- local key_picker = libmodal.Mode.new('KEY PICKER', keyPicker)
 
 local function talk()
   vim.g.M3 = score_layer
@@ -25,9 +25,10 @@ local function handlerFunction()
   if(modeIdentifier == 'score')
     then
       score_layer:enter()
-  elseif(modeIdentifier == 'chord_float')
+  elseif(modeIdentifier == 'key_picker')
     then
-      chord_float:enter()
+        libmodal.prompt.enter('KEY PICKER', keyPickerMaps)
+        -- key_picker:enter()
   elseif(modeIdentifier == 'staff_constructor')
     then
       libmodal.mode.enter('STAFF', staffConstructorMaps, true)
@@ -67,20 +68,12 @@ local function close_menu()
     Chord_bufh = nil
 end
 
--- local function open_menu()
---     api.nvim_open_win(Chord_win_id, true)
--- end
-
 local function toggle_fwin(chord_id)
     if Chord_win_id ~= nil and api.nvim_win_is_valid(Chord_win_id) then
         close_menu()
         return
     end
 
-    -- if Chord_win_id ~= nil then
-    --     open_menu()
-    --     return
-    -- end
     local win_info = create_cw()
     local contents = {}
     contents[1] = chord_id
@@ -134,12 +127,6 @@ local function chord_constructor(chord_id, space_id)
         ["sI3"] = "j<c-v>4klP<c-c>3jhhjn3kklll',true,false,true),'m',true)",
         ["sI3*U"] = "j<c-v>4klP<c-c>3jhhkn2jjl',true,false,true),'m',true)",
         ["sI3**U"] = "<c-v>4klP<c-c>3jhhnjjll',true,false,true),'m',true)",
-
-        -- ["sev*U"] = "j<c-v>4klP<c-c>3jh',true,false,true),'m',true)",
-        -- ["sevD"] = "j<c-v>4klP<c-c>3jh',true,false,true),'m',true)",
-
-        -- ["sevU"] = "',true,false,true),'m',true)",
-        -- ["sev*U"] = "G$k',true,false,true),'m',true)",
   }
     toggle_fwin(chord_id)
     -- you're at the top of the buffer, in visual selection mode
@@ -148,6 +135,16 @@ local function chord_constructor(chord_id, space_id)
     Action = Action..space_lookup[space_id]
     api.nvim_command(Action)
 end
+
+local function key_constructor(key_id, space_id)
+    local space_lookup = {
+        -- ["sI3**U"] = "<c-v>4klP<c-c>3jhhnjjll',true,false,true),'m',true)",
+    }
+    -- local Action = "lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('A<tab><c-c>gg0<c-v>}$yq<c-c>"
+    Action = Action..space_lookup[space_id]
+    api.nvim_command(Action)
+end
+
 
 local function set_coordinates()
   api.nvim_command("set cursorline")
@@ -176,14 +173,14 @@ local function re_entry_SL()
     api.nvim_command("set colorcolumn=149")
 end
 
-local function exit_CF()
-  chord_float:exit()
-  modeIdentifier = 'score'
-  handlerFunction()
-end
+-- local function exit_KP()
+  -- key_picker:exit()
+  -- modeIdentifier = 'score'
+  -- handlerFunction()
+-- end
 
-local function enter_CF()
-  modeIdentifier = 'chord_float'
+local function enter_KP()
+  modeIdentifier = 'key_picker'
   handlerFunction()
 end
 
@@ -219,12 +216,13 @@ return {
     close_menu = close_menu,
     toggle_fwin = toggle_fwin,
     chord_constructor = chord_constructor,
+    key_constructor = key_constructor,
     set_coordinates = set_coordinates,
     kill_coordinates = kill_coordinates,
     exit_SL = exit_SL,
     re_entry_SL = re_entry_SL,
-    exit_CF = exit_CF,
-    enter_CF = enter_CF,
+    -- exit_KP = exit_KP,
+    enter_KP = enter_KP,
     enter_SC = enter_SC,
     exit_SC = exit_SC,
     snip_builder_func = snip_builder_func,
