@@ -17,7 +17,7 @@ local score_layer = libmodal.Layer.new(runningMap)
 -- local key_picker = libmodal.Mode.new('KEY PICKER', keyPicker)
 
 local function talk()
-  vim.g.M3 = score_layer
+  vim.g.M3 = "hellooo"
   api.nvim_command("echom g:M3")
 end
 
@@ -136,14 +136,11 @@ local function chord_constructor(chord_id, space_id)
     api.nvim_command(Action)
 end
 
-local function key_constructor(key_id, space_id)
-    local space_lookup = {
-        -- ["sI3**U"] = "<c-v>4klP<c-c>3jhhnjjll',true,false,true),'m',true)",
-    }
-    -- local Action = "lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('A<tab><c-c>gg0<c-v>}$yq<c-c>"
-    Action = Action..space_lookup[space_id]
-    api.nvim_command(Action)
-end
+-- local function key_constructor(key_id)
+    -- local Action = "lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('"
+    -- Action = Action..space_lookup[key_id].."',true,false,true),'m',true)"
+    -- api.nvim_command(Action)
+-- end
 
 
 local function set_coordinates()
@@ -216,7 +213,7 @@ return {
     close_menu = close_menu,
     toggle_fwin = toggle_fwin,
     chord_constructor = chord_constructor,
-    key_constructor = key_constructor,
+    -- key_constructor = key_constructor,
     set_coordinates = set_coordinates,
     kill_coordinates = kill_coordinates,
     exit_SL = exit_SL,

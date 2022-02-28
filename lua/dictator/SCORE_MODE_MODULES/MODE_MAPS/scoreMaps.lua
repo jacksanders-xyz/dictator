@@ -37,7 +37,6 @@ local collect_tables = {
     clefs_staffs_barlines,
 }
 
-
 local MasterTable = {
     ['n'] = {}
 }
