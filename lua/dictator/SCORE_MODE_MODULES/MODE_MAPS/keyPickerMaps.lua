@@ -1,6 +1,7 @@
 -- local promptStart =  "exec 'norm!' ':lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(\"ihello<CR>\",true,false,true),\"m\",true)\r'"
 local promptStart =  "exec 'norm!' ':lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(\""
 local promptEnd =  "\",true,false,true),\"m\",true)\r'"
+local Up =  "k"
 local twoUp =  "kk"
 local d1r1 =  "jl"
 local d2r1 =  "2jl"
@@ -36,13 +37,13 @@ return {
     ['BMaj treble'] = promptStart..twoUp..sM['#k']..d1r1..sM['#k']..u2r1..sM['#n']..d1r1..sM['#j']..d1r1..sM['#j']..promptEnd,
     ['F#Maj treble'] = promptStart..twoUp..sM['#k']..d1r1..sM['#k']..u2r1..sM['#n']..d1r1..sM['#j']..d1r1..sM['#j']..u1r1..sM['#n']..promptEnd,
     ['C#Maj treble'] = promptStart..twoUp..sM['#k']..d1r1..sM['#k']..u2r1..sM['#n']..d1r1..sM['#j']..d1r1..sM['#j']..u1r1..sM['#n']..d1r1..sM['#n']..promptEnd,
-    ['FMaj treble'] = promptStart..twoUp..sM['#k']..d1r1..sM['#k']..promptEnd,
-    -- ['BbMaj treble'] = promptStart..twoUp..sM['#k']..d1r1..sM['#k']....promptEnd,
-    ['EbMaj treble'] = promptStart..promptEnd,
-    ['AbMaj treble'] = promptStart..promptEnd,
-    ['DbMaj treble'] = promptStart..promptEnd,
-    ['GbMaj treble'] = promptStart..promptEnd,
-    ['CbMaj treble'] = promptStart..promptEnd,
+    ['FMaj treble'] = promptStart..Up..sM['bn']..promptEnd,
+    ['BbMaj treble'] = promptStart..Up..sM['bn']..u1r1..sM['bn']..promptEnd,
+    ['EbMaj treble'] = promptStart..Up..sM['bn']..u1r1..sM['bn']..d1r1..sM['bj']..promptEnd,
+    ['AbMaj treble'] = promptStart..Up..sM['bn']..u1r1..sM['bn']..d1r1..sM['bj']..u1r1..sM['bj']..promptEnd,
+    ['DbMaj treble'] = promptStart..Up..sM['bn']..u1r1..sM['bn']..d1r1..sM['bj']..u1r1..sM['bj']..d2r1..sM['bk']..promptEnd,
+    ['GbMaj treble'] = promptStart..Up..sM['bn']..u1r1..sM['bn']..d1r1..sM['bj']..u1r1..sM['bj']..d2r1..sM['bk']..u1r1..sM['bk']..promptEnd,
+    ['CbMaj treble'] = promptStart..Up..sM['bn']..u1r1..sM['bn']..d1r1..sM['bj']..u1r1..sM['bj']..d2r1..sM['bk']..u1r1..sM['bk']..d1r1..sM['bn']..promptEnd,
 
     ['amin treble'] = promptStart..promptEnd,
     ['emin treble'] = promptStart..promptEnd,
