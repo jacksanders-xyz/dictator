@@ -1,21 +1,24 @@
+-- local promptStart =  "exec 'norm!' ':lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(\"ihello<CR>\",true,false,true),\"m\",true)\r'"
+local promptStart =  "exec 'norm!' ':lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(\""
+local promptEnd =  "\",true,false,true),\"m\",true)\r'"
 local sM = {}
 
-sM['#n'] = 'v2lr'
+sM['#n'] = 'vlc'
 
 
-sM['#k'] = 'vlr'
+sM['#k'] = 'vlc'
 
 
-sM['#j'] = 'vlr'
+sM['#j'] = 'vlc'
 
 
-sM['bn'] = 'vlr'
+sM['bn'] = 'vlc'
 
 
-sM['bk'] = 'vlr'
+sM['bk'] = 'vlc'
 
 
-sM['bj'] = 'vlr'
+sM['bj'] = 'vlc'
 
 return {
     ['CMaj treble'] = '',
@@ -24,7 +27,7 @@ return {
     -- ['GMaj treble'] = 'norm! kk'..sM['#k'],
     -- ['DMaj treble'] = 'norm! kk'..sM['#k']..'jl'..sM['#k'],
     ['DMaj treble'] = 'norm! kk'..sM['#k']..'jl'..sM['#k'],
-    ['AMaj treble'] = "exec 'norm!' ':lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(\"ihello\",true,false,true),\"m\",true)\r'",
+    ['AMaj treble'] = promptStart.."ihello<CR><Esc>"..promptEnd,
     ['EMaj treble'] = 'norm! kk',
     ['BMaj treble'] = 'norm! kk',
     ['F#Maj treble'] = 'norm! kk',
