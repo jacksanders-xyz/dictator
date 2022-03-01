@@ -14,7 +14,7 @@ local runningMap = table_copy(scoreMaps)
 local modeIdentifier = 'score'
 local api = vim.api
 local score_layer = libmodal.Layer.new(runningMap)
--- local key_picker = libmodal.Mode.new('KEY PICKER', keyPicker)
+local key_picker = libmodal.Prompt.new('KEY PICKER', keyPickerMaps)
 
 local function talk()
   vim.g.M3 = "hellooo"
@@ -27,8 +27,8 @@ local function handlerFunction()
       score_layer:enter()
   elseif(modeIdentifier == 'key_picker')
     then
-        libmodal.prompt.enter('KEY PICKER', keyPickerMaps)
-        -- key_picker:enter()
+        -- libmodal.prompt.enter('KEY PICKER', keyPickerMaps)
+        key_picker:enter()
   elseif(modeIdentifier == 'staff_constructor')
     then
       libmodal.mode.enter('STAFF', staffConstructorMaps, true)
@@ -128,6 +128,7 @@ local function chord_constructor(chord_id, space_id)
         ["sI3*U"] = "j<c-v>4klP<c-c>3jhhkn2jjl',true,false,true),'m',true)",
         ["sI3**U"] = "<c-v>4klP<c-c>3jhhnjjll',true,false,true),'m',true)",
   }
+    -- "lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('ihello',true,false,true),'m',true)"
     toggle_fwin(chord_id)
     -- you're at the top of the buffer, in visual selection mode
     local Action = "lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('A<tab><c-c>gg0<c-v>}$yq<c-c>"

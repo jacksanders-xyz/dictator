@@ -1,8 +1,30 @@
+local sM = {}
+
+sM['#n'] = 'v2lr'
+
+
+sM['#k'] = 'vlr'
+
+
+sM['#j'] = 'vlr'
+
+
+sM['bn'] = 'vlr'
+
+
+sM['bk'] = 'vlr'
+
+
+sM['bj'] = 'vlr'
+
 return {
-    ['CMaj treble'] = 'norm! ',
-    ['GMaj treble'] = 'kk:lua require("dictator").talk()',
-    ['DMaj treble'] = 'norm! kk',
-    ['AMaj treble'] = 'norm! kk',
+    ['CMaj treble'] = '',
+    -- ['GMaj treble'] = 'exec "normal!" "kkvlc"',
+    ['GMaj treble'] = 'exec "normal!" "kkvlc"',
+    -- ['GMaj treble'] = 'norm! kk'..sM['#k'],
+    -- ['DMaj treble'] = 'norm! kk'..sM['#k']..'jl'..sM['#k'],
+    ['DMaj treble'] = 'norm! kk'..sM['#k']..'jl'..sM['#k'],
+    ['AMaj treble'] = "exec 'norm!' ':lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(\"ihello\",true,false,true),\"m\",true)\r'",
     ['EMaj treble'] = 'norm! kk',
     ['BMaj treble'] = 'norm! kk',
     ['F#Maj treble'] = 'norm! kk',
