@@ -1,4 +1,3 @@
--- local promptStart =  "exec 'norm!' ':lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(\"ihello<CR>\",true,false,true),\"m\",true)\r'"
 local promptStart =  "exec 'norm!' ':lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(\""
 local promptEnd =  "\",true,false,true),\"m\",true)\r'"
 local Up =  "k"
@@ -7,7 +6,6 @@ local d1r1 =  "jl"
 local d2r1 =  "2jl"
 local u2r1 =  "2kl"
 local u1r1 =  "kl"
-
 
 local sM = {}
 

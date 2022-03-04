@@ -1,3 +1,4 @@
+-- NORMAL MODE REMAPS
 local numbers_glyphs = require('dictator.SCORE_MODE_MODULES.GLYPHS.NUMBERS.numbers_glyphs')
 local black_noteheads = require('dictator.SCORE_MODE_MODULES.GLYPHS.NOTES.black_noteheads')
 local whole_notes = require('dictator.SCORE_MODE_MODULES.GLYPHS.NOTES.whole_notes')
@@ -16,8 +17,15 @@ local rests = require('dictator.SCORE_MODE_MODULES.GLYPHS.RESTS.rests')
 -- local ties = require('dictator.SCORE_MODE_MODULES.GLYPHS.TIES.ties')
 local controllers_switches_routers = require('dictator.SCORE_MODE_MODULES.GLYPHS.controllers_switches_routers')
 local clefs_staffs_barlines = require('dictator.SCORE_MODE_MODULES.GLYPHS.clefs_staffs_barlines')
+-- VIUAL MODE REMAPS
+local time_changer = require('dictator.SCORE_MODE_MODULES.VISUAL_MODE_MAPS.time_changer')
 
-local collect_tables = {
+-- VISUAL MODE REMAPS
+local collect_visual_tables = {
+    time_changer
+}
+
+local collect_normal_tables = {
     numbers_glyphs,
     black_noteheads,
     whole_notes,
@@ -38,12 +46,17 @@ local collect_tables = {
 }
 
 local MasterTable = {
-    ['n'] = {}
+    ['n'] = {},
+    ['v'] = {},
 }
-
-for table,tableValue in pairs(collect_tables) do
+for table,tableValue in pairs(collect_normal_tables) do
   for key,value in pairs(tableValue) do
     MasterTable['n'][key] = value
+  end
+end
+for table,tableValue in pairs(collect_visual_tables) do
+  for key,value in pairs(tableValue) do
+    MasterTable['v'][key] = value
   end
 end
 return MasterTable

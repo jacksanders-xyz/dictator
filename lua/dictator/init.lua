@@ -24,8 +24,8 @@ end
 local function handlerFunction()
   if(modeIdentifier == 'score')
     then
-      score_layer:enter()
-  elseif(modeIdentifier == 'key_picker')
+        score_layer:enter()
+    elseif(modeIdentifier == 'key_picker')
     then
         -- libmodal.prompt.enter('KEY PICKER', keyPickerMaps)
         key_picker:enter()
@@ -171,7 +171,6 @@ local function re_entry_SL()
     api.nvim_command("set colorcolumn=149")
 end
 
--- local function exit_KP()
   -- key_picker:exit()
   -- modeIdentifier = 'score'
   -- handlerFunction()
