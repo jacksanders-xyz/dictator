@@ -22,6 +22,7 @@ local string_table = {
 }
 
 
+
 return {
     ['W'] = {
         ['rhs'] = string_table['NtoWhole'],
