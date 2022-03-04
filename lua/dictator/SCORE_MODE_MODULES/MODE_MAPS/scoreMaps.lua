@@ -24,7 +24,6 @@ local time_changer = require('dictator.SCORE_MODE_MODULES.VISUAL_MODE_MAPS.time_
 local collect_visual_tables = {
     time_changer
 }
-
 local collect_normal_tables = {
     numbers_glyphs,
     black_noteheads,
