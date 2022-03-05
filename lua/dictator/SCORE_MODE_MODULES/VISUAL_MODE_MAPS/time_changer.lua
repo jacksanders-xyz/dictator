@@ -3,7 +3,6 @@ local promptStart = "mz:\b\b\b\b\bsilent execute ':lua vim.api.nvim_feedkeys(vim
 local promptEnd = "/g\",true,false,true),\"m\",true)'\r`z"
 
 -- %s/\V//g
-
     -- search and replace HAS worked. maybe try one without a ligature?
 
 local whole_note = ""
@@ -42,8 +41,6 @@ local string_table = {
     ['NtoSixteenthUp'] = promptStart..SixteenthNoteUp..promptEnd,
     ['NtoSixteenthDown'] = promptStart..SixteenthNoteDown..promptEnd,
 }
-
-
 
 return {
     ['W'] = {
