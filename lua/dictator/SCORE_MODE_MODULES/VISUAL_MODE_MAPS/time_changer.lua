@@ -1,24 +1,46 @@
 -- CHANGE THE TIME OF NOTES WITH VISUAL BLOCK MODE
-local promptStart = ":\b\b\b\b\bsilent execute ':lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(\":\\<c-u>%s/\\%V/"
-local promptEnd = "/g\",true,false,true),\"m\",true)'\r"
+local promptStart = "mz:\b\b\b\b\bsilent execute ':lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(\":\\<c-u>%s/\\%V/"
+local promptEnd = "/g\",true,false,true),\"m\",true)'\r`z"
 
-local whole_note = ""
+-- %s/\V//g
 
-local HalfNote = ""
+    -- search and replace HAS worked. maybe try one without a ligature?
 
-local QuarterNote = ""
+local whole_note = ""
 
-local EighthNote = ""
+local HalfNoteDown = ""
+local HalfNoteUp = ""
+local HalfNoteEmpty = ""
 
-local SixteenthNote = ""
+
+local QuarterNoteUp = ""
+local QuarterNoteDown = ""
+
+
+
+local EighthNoteUp = ""
+local EighthNoteDown = ""
+
+
+local SixteenthNoteUp = ""
+local SixteenthNoteDown = ""
 
 
 local string_table = {
     ['NtoWhole'] = promptStart..whole_note..promptEnd,
-    ['NtoHalf'] = promptStart..HalfNote..promptEnd,
-    ['NtoQuarter'] = promptStart..QuarterNote..promptEnd,
-    ['NtoEighth'] = promptStart..EighthNote..promptEnd,
-    ['NtoSixteenth'] = promptStart..SixteenthNote..promptEnd,
+
+    ['NtoHalfUp'] = promptStart..HalfNoteUp..promptEnd,
+    ['NtoHalfDown'] = promptStart..HalfNoteDown..promptEnd,
+    ['NtoHalfEmpty'] = promptStart..HalfNoteEmpty..promptEnd,
+
+    ['NtoQuarterUp'] = promptStart..QuarterNoteUp..promptEnd,
+    ['NtoQuarterDown'] = promptStart..QuarterNoteDown..promptEnd,
+
+    ['NtoEighthUp'] = promptStart..EighthNoteUp..promptEnd,
+    ['NtoEighthDown'] = promptStart..EighthNoteDown..promptEnd,
+
+    ['NtoSixteenthUp'] = promptStart..SixteenthNoteUp..promptEnd,
+    ['NtoSixteenthDown'] = promptStart..SixteenthNoteDown..promptEnd,
 }
 
 
@@ -28,20 +50,40 @@ return {
         ['rhs'] = string_table['NtoWhole'],
         ['noremap'] = true
     },
-    ['H'] = {
-        ['rhs'] = string_table['NtoHalf'],
+    ['Hu'] = {
+        ['rhs'] = string_table['NtoHalfUp'],
         ['noremap'] = true
     },
-    ['N'] = {
-        ['rhs'] = string_table['NtoQuarter'],
+    ['Hd'] = {
+        ['rhs'] = string_table['NtoHalfDown'],
         ['noremap'] = true
     },
-    ['E'] = {
-        ['rhs'] = string_table['NtoEighth'],
+    ['He'] = {
+        ['rhs'] = string_table['NtoHalfEmpty'],
         ['noremap'] = true
     },
-    ['S'] = {
-        ['rhs'] = string_table['NtoSixteenth'],
+    ['Nu'] = {
+        ['rhs'] = string_table['NtoQuarterUp'],
+        ['noremap'] = true
+    },
+    ['Nd'] = {
+        ['rhs'] = string_table['NtoQuarterDown'],
+        ['noremap'] = true
+    },
+    ['Eu'] = {
+        ['rhs'] = string_table['NtoEighthUp'],
+        ['noremap'] = true
+    },
+    ['Ed'] = {
+        ['rhs'] = string_table['NtoEighthDown'],
+        ['noremap'] = true
+    },
+    ['Su'] = {
+        ['rhs'] = string_table['NtoSixteenthUp'],
+        ['noremap'] = true
+    },
+    ['Sd'] = {
+        ['rhs'] = string_table['NtoSixteenthDown'],
         ['noremap'] = true
     },
 }
