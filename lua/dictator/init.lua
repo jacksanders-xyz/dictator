@@ -162,11 +162,13 @@ local function exit_SL()
     --     end
     -- end
     score_layer:exit()
+    vim.g.libmodalLayerActive = 0
     api.nvim_command("set colorcolumn=")
 end
 
 local function re_entry_SL()
     -- reMap(score_layer)
+    vim.g.libmodalLayerActive = 1
     score_layer:enter()
     api.nvim_command("set colorcolumn=149")
 end
@@ -204,6 +206,7 @@ end
 
 local function begin_SM()
     api.nvim_command("set colorcolumn=149")
+    vim.g.libmodalLayerActive = 1
     handlerFunction()
 end
 
