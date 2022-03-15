@@ -49,8 +49,8 @@ local MasterTable = {
     ['v'] = {},
     ['i'] = {
         ['<C-q>'] = {
-        ['rhs'] = '<Esc>',
-        ['noremap'] = true
+            ['rhs'] = '<esc>',
+            ['noremap'] = true
       }
     },
 }

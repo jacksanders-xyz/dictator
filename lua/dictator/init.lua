@@ -97,8 +97,10 @@ end
 
  -- "mz:\b\b\b\b\bsilent execute ':lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(\":\\<c-u>%s/\\%V/"
 
-local function resetToScore()
-    api.nvim_command('lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<c-q>",true,false,true),"m",true)')
+local function resetToScore(space_id)
+    api.nvim_command('lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<C-c>:norm! <esc>",true,false,true),"m",true)')
+    vim.g.LastChord = space_id
+    -- api.nvim_command("echom g:LastChord")
 end
 
 local function chord_constructor(chord_id, space_id)
@@ -138,8 +140,7 @@ local function chord_constructor(chord_id, space_id)
     local Action = "lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('A<tab><c-c>gg0<c-v>}$yq<c-c>"
     Action = Action..space_lookup[space_id]
     api.nvim_command(Action)
-    resetToScore()
-    -- api.nvim_command("lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<C-c>',true,false,true),'m',true)")
+    resetToScore(space_id)
 end
 
 -- local function key_constructor(key_id)
