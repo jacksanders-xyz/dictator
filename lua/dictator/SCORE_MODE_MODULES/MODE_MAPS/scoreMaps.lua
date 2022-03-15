@@ -47,6 +47,12 @@ local collect_normal_tables = {
 local MasterTable = {
     ['n'] = {},
     ['v'] = {},
+    ['i'] = {
+        ['<C-q>'] = {
+        ['rhs'] = '<Esc>',
+        ['noremap'] = true
+      }
+    },
 }
 for table,tableValue in pairs(collect_normal_tables) do
   for key,value in pairs(tableValue) do

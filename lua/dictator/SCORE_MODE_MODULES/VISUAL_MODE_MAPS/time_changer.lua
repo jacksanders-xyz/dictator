@@ -16,7 +16,6 @@ local QuarterNoteUp = ""
 local QuarterNoteDown = ""
 
 
-
 local EighthNoteUp = ""
 local EighthNoteDown = ""
 

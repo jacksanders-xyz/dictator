@@ -25,12 +25,6 @@ return {
       ['noremap'] = true,
       ['silent'] = true
     },
-
     -- jump by note??
-    -- ['L'] = {
-    --   ['rhs'] = 'llllll',
-    --   ['noremap'] = true,
-    --   ['silent'] = true
-    -- },
 }
 

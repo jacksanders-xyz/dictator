@@ -95,6 +95,12 @@ local function toggle_fwin(chord_id)
     )
 end
 
+ -- "mz:\b\b\b\b\bsilent execute ':lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(\":\\<c-u>%s/\\%V/"
+
+local function resetToScore()
+    api.nvim_command('lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<c-q>",true,false,true),"m",true)')
+end
+
 local function chord_constructor(chord_id, space_id)
   local space_lookup = {
 
@@ -110,7 +116,7 @@ local function chord_constructor(chord_id, space_id)
         ["tI2*U"] = "j<c-v>4klP<c-c>3jh',true,false,true),'m',true)",
         ["tI2**U"] = "j<c-v>4klP<c-c>3jh',true,false,true),'m',true)",
 
-        ["sev"] = "j<c-v>4klP<c-c>3j',true,false,true),'m',true)",
+        ["sev"] = "j<c-v>4klP<c-c>3jl',true,false,true),'m',true)",
         ["sev*U"] = "j<c-v>4klP<c-c>3j',true,false,true),'m',true)",
         ["sev**U"] = "j<c-v>4klP<c-c>3j',true,false,true),'m',true)",
 
@@ -123,18 +129,17 @@ local function chord_constructor(chord_id, space_id)
         ["sI2*U"] = "j<c-v>4klP<c-c>3jhhknnjl',true,false,true),'m',true)",
         ["sI2**U"] = "j<c-v>4klP<c-c>3jhhknkj2l',true,false,true),'m',true)",
 
-
         ["sI3"] = "j<c-v>4klP<c-c>3jhhjn3kklll',true,false,true),'m',true)",
         ["sI3*U"] = "j<c-v>4klP<c-c>3jhhkn2jjl',true,false,true),'m',true)",
         ["sI3**U"] = "<c-v>4klP<c-c>3jhhnjjll',true,false,true),'m',true)",
   }
-    -- "lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('ihello',true,false,true),'m',true)"
     toggle_fwin(chord_id)
     -- you're at the top of the buffer, in visual selection mode
     local Action = "lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('A<tab><c-c>gg0<c-v>}$yq<c-c>"
-    -- local Action = "lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('A<tab><Esc>"
     Action = Action..space_lookup[space_id]
     api.nvim_command(Action)
+    resetToScore()
+    -- api.nvim_command("lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<C-c>',true,false,true),'m',true)")
 end
 
 -- local function key_constructor(key_id)

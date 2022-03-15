@@ -1,3 +1,4 @@
+-- local resetString =  "<esc> :execute 'norm!' ':lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(\"<c-c>\",true,false,true),\"m\",true)\r'"
 return {
 -- triads
     ['<leader>{'] = {
@@ -46,6 +47,10 @@ return {
         ['rhs'] = ':lua require("dictator").chord_constructor("CC_7", "sev")<CR>',
         ['noremap'] = true
     },
+    -- ['<leader>)'] = {
+    --     ['rhs'] = ':lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<c-c>",true,false,true),"m",true)',
+    --     ['noremap'] = true
+    -- },
     ['<leader>7'] = {
         ['rhs'] = ':lua require("dictator").chord_constructor("CC_7*U", "sev*U")<CR>',
         ['noremap'] = true
