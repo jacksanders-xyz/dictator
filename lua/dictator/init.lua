@@ -206,6 +206,7 @@ end
 
 local function snip_builder_func(staff_instruction)
   local string_prep = "lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('q:norm i"..staff_instruction
+  -- local string_prep = "lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('q',true,false,true),'m',true)"
   string_prep = string_prep.."<cr>A<tab>',true,false,true),'m',true)"
   api.nvim_command(string_prep)
 end

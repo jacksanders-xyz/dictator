@@ -6,16 +6,18 @@ return {
   ['l'] = 'norm l',
 
   -- single snip opening
-  ['sso'] = ":lua require('dictator').snip_builder_func('SC_sO_1')",
+  -- ['sso'] = ":lua require('dictator').snip_builder_func('SC_sO_1')",
+  ['S'] = ":lua require('dictator').snip_builder_func('SC_sO_1')",
 
   -- single snip continuing
-  ['ssc'] = ":lua require('dictator').snip_builder_func('SC_sC_2')",
+  -- ['ssc'] = ":lua require('dictator').snip_builder_func('SC_sC_2')",
+  ['s'] = ":lua require('dictator').snip_builder_func('SC_sC_2')",
 
   -- double snip opening
-  ['dso'] = ":lua require('dictator').snip_builder_func('SC_dO_3')",
+  ['D'] = ":lua require('dictator').snip_builder_func('SC_dO_3')",
 
   -- double snip continuing
-  ['dsc'] = ":lua require('dictator').snip_builder_func('SC_dC_4')",
+  ['d'] = ":lua require('dictator').snip_builder_func('SC_dC_4')",
 
   ['q'] = ':lua require("dictator").exit_SC()',
 }
